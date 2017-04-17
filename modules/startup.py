@@ -67,7 +67,13 @@ def startup(jenni, input):
         else:
             user = jenni.config.nick
 
-        jenni.msg('NickServ', 'IDENTIFY %s %s' % (user, jenni.config.password))
+        nsstring = '%s' % jenni.config.password
+        if hasattr(jenni.config, 'nsuserpass') and jenni.config.nsuserpass:
+            nsstring = '%s %s' % (user, jenni.config.password)
+
+        if nsstring:        
+            jenni.msg('NickServ', 'IDENTIFY %s' % nsstring)
+
         time.sleep(10)
 
     # Cf. http://swhack.com/logs/2005-12-05#T19-32-36

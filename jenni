@@ -53,6 +53,11 @@ def create_default_config(fn):
     # For example: yano@unaffiliated/yano
     owner = 'yournickname'
 
+    # use username with nickserv
+    # anope 1.8 doesn't support passing a username to nickserv, support for this is
+    # added here, booleen True or False
+    nsuserpass = True
+
     # user is the NickServ userid
     # This is useful if your NickServ user is different than the nick you are using
     # user = 'userid'
