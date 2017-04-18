@@ -9,3 +9,5 @@ logs/*
 build
 *~
 nohup.out
+modules/pulltitle.py
+modules/onthisday.py
